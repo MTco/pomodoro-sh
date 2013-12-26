@@ -45,7 +45,7 @@ else
     ### Debian/Linux ###
 
     SUDO_USER=${USERNAME};
-    USER_NAME="/users/$SUDO_USER/home/";
+    USER_HOME="/users/$SUDO_USER/home/";
     echo "Debian/Linux support not yet imlemented....";
     exit 1;
 fi
