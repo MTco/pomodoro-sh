@@ -101,7 +101,6 @@ root_check;
 if [ x"$1" = x-start ]; then
     if test -f "$USER_HOME$PIDFILE"; then exit; fi
     echo $$ > "$USER_HOME$PIDFILE"
-    trap "rm '$USER_HOME$PIDFILE'" EXIT SIGTERM
     while true; do
         for i in $(seq 1 $SET_SIZE); do
             # Work starts
@@ -116,7 +115,6 @@ if [ x"$1" = x-start ]; then
         # Set interval ends here
         $CMD_SET_END;
         $CMD_AS_USER sleep $SET_INTERVAL_SEC;
-        wait # needed for trap to work
     done
 elif [ x"$1" = x-stop ]; then
     # Cleanup hosts file and die.

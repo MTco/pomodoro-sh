@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+###
+# Don't run this as root.
+###
+
+echo "Copying urls blacklist to ~/.pomodoro.urls.blacklist rm it if you don't want blacklisting.\n"
+cp pomodoro.urls.blacklist ~/.pomodoro.urls.blacklist
+
+echo "Copying pomodoro.sh to /usr/local/bin/pomodoro.\n"
+sudo cp pomodoro.sh /usr/local/bin/pomodoro

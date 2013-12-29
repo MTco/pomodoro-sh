@@ -7,11 +7,18 @@ notifications are sent out via terminal-notifier http://rubygems.org/gems/termin
 
 If the user creates a file named .pomodoro.urls.blacklist in their home directory all of the domains in the file will be blacklisted during each work session.
 
+Install it....
 <code>
-sudo pomodoro.sh -start #start it up
+./install
 </code>
 
 
+Start it up....
 <code>
-sudo pomodoro.sh -stop #stop it gracefully
+sudo pomodoro -start &
+</code>
+
+Stop it gracefully....
+<code>
+sudo pomodoro -stop
 </code>
