@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
 ###################
-# Morgan Reece (Phillips) @ 2013
+# Morgan Reece (Phillips)
 # mrrrgn.com
 # wiki.mrrrgn.com
-# linuxpoetry.mrrrgn.com
 #
 # This script will notify the user when to work and when to rest
 # in intervals as specified in http://en.wikipedia.org/wiki/Pomodoro_Technique
@@ -31,9 +30,8 @@ if [ `uname` = "Darwin" ]; then
     ### OS X ###
 
     # Make sure terminal-notifier is installed
-    if !type terminal-notifier 2> /dev/null; then
-        echo "Installing terminal-notifier gem....";
-        sudo gem install terminal-notifier;
+    if ! which terminal-notifier
+        then gem install terminal-notifier;
     fi
 
     CMD="terminal-notifier -title -sound default -message";
@@ -43,7 +41,7 @@ if [ `uname` = "Darwin" ]; then
     USER_HOME="/Users/$SUDO_USER/";
 else
     ### Debian/Linux ###
-
+    #TODO: Add Linux support.  >.<
     SUDO_USER=${USERNAME};
     USER_HOME="/users/$SUDO_USER/home/";
     echo "Debian/Linux support not yet imlemented....";
@@ -122,6 +120,4 @@ elif [ x"$1" = x-stop ]; then
     PID=$(cat $USER_HOME$PIDFILE);
     rm -f $USER_HOME$PIDFILE
     kill -9 $PID;
-else
-    nohup "$0" -start;
 fi
