@@ -39,13 +39,26 @@ if [ `uname` = "Darwin" ]; then
     
     # Because we can't count on ~
     USER_HOME="/Users/$SUDO_USER/";
+    CMD_AS_USER="sudo -u $SUDO_USER"; # We need this for notifications to work
 else
     ### Debian/Linux ###
-    #TODO: Add Linux support.  >.<
-    SUDO_USER=${USERNAME};
-    USER_HOME="/users/$SUDO_USER/home/";
-    echo "Debian/Linux support not yet imlemented....";
-    exit 1;
+    SUDO_USER=$SUDO_USER;
+    USER_HOME="/home/$SUDO_USER/";
+    CMD_AS_USER="";
+     
+    # Because Linux can run headless, a more complex
+    # notification command is needed, that takes args,
+    # so a function holds all of the logic.
+    function linux_notify() {
+        # A text only notification
+        echo $1 | wall;
+    }
+    CMD="linux_notify";
+    if echo $DISPLAY 1>/dev/null; then
+        if python -m notify2 2>/dev/null; then 
+            echo "Graphical notifications not yet supported....";
+        fi
+    fi
 fi
 
 
@@ -56,7 +69,6 @@ BLACKLIST=.pomodoro.urls.blacklist; # urls to blacklist during work
 PIDFILE=.pomodoro.pid;
 
 ### OS agnostic commands ###
-CMD_AS_USER="sudo -u $SUDO_USER"; # We need this for notifications to work
 CMD_WORK_START="$CMD_AS_USER $CMD '$WORK_MSG'";
 CMD_REST_START="$CMD_AS_USER $CMD '$REST_MSG'";
 CMD_SET_END="$CMD_AS_USER $CMD '$SET_MSG'";
