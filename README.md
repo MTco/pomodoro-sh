@@ -1,7 +1,7 @@
 ###pomodoro.sh
 
 
-This script will notify the user when to work and when to rest in intervals as specified at http://en.wikipedia.org/wiki/Pomodoro_Technique.
+This script will notify the user when to work and when to rest in intervals as specified at http://en.wikipedia.org/wiki/Pomodoro_Technique.  It also alters your hosts file to blacklist any distracting sites during work intervals.
 
 notifications are sent out via terminal-notifier http://rubygems.org/gems/terminal-notifier on OS X or pynotify2 on Linux
 
