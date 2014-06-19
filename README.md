@@ -3,7 +3,7 @@
 
 This script will notify the user when to work and when to rest in intervals as specified at http://en.wikipedia.org/wiki/Pomodoro_Technique.
 
-notifications are sent out via terminal-notifier http://rubygems.org/gems/terminal-notifier on OS X or echo "$1" | wall on Linux (Graphical notifications will be supported in the near future via pynotify2). 
+notifications are sent out via terminal-notifier http://rubygems.org/gems/terminal-notifier on OS X or echo "$1" | wall on Linux (graphical notifications will be supported in the near future via pynotify2). 
 
 
 ####  Install & Run
