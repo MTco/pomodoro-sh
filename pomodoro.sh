@@ -56,8 +56,12 @@ else
     CMD="linux_notify";
     if echo $DISPLAY 1>/dev/null; then
         if python -m notify2 2>/dev/null; then 
-            echo "Graphical notifications not yet supported....";
-        fi
+            function linux_notify() {
+                python -c "import notify2;notify2.init('psh');m=notify2.Notification('pomodoro.sh', $1);m.show();";
+            }
+        else
+            echo "Enable GUI notifications by installing python-notify2.";
+	    fi
     fi
 fi
 
