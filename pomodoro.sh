@@ -12,6 +12,8 @@
 # in a file named .pomodoro.urls.blacklist stored in the users home directory.
 ####################
 
+SUDO_USER=${SUDO_USER}; # So we can run commands as non-root
+
 ### INVERVAL CONSTANTS ###
 
 WORK_INTERVAL_SEC=1500; # 25 minutes of work
@@ -35,14 +37,12 @@ if [ `uname` = "Darwin" ]; then
     fi
 
     CMD="terminal-notifier -title -sound default -message";
-    SUDO_USER=${SUDO_USER}; # So we can run commands as non-root
     
     # Because we can't count on ~
     USER_HOME="/Users/$SUDO_USER/";
     CMD_AS_USER="sudo -u $SUDO_USER"; # We need this for notifications to work
 else
     ### Debian/Linux ###
-    SUDO_USER=$SUDO_USER;
     USER_HOME="/home/$SUDO_USER/";
     CMD_AS_USER="";
      
