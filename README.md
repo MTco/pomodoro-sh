@@ -21,22 +21,16 @@ Stop it gracefully....
 sudo pomodoro stop
 </code>
 
-Or, just run ./pomodoro.sh stop|start
+Or, just run ./pomodoro.sh (stop|start)
 
 #### Block Domains While Working
 Create/edit a file called .pomodoro.urls.blacklist in your home folder.  Each of the domains in the file will be blacklisted during each work session.
 
-<code>
->> cat ~/.pomodoro.urls.blacklist
-facebook.com
-news.ycombinator.com
-reddit.com
-mail.google.com
-voice.google.com
-www.facebook.com
-www.reddit.com
-amazon.com
-www.amazon.com
-twitter.com
-www.twitter.com
-</code>
+
+&gt; cat ~/.pomodoro.urls.blacklist
+
+facebook.com<br/>
+news.ycombinator.com<br/>
+reddit.com<br/>
+
+
