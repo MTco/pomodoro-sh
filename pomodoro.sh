@@ -96,7 +96,7 @@ function unblacklist_hosts_file {
 root_check;
 
 ### Start Working! ###
-if [ x"$1" = x-start ]; then
+if [ x"$1" = xstart ]; then
     if test -f "$USER_HOME$PIDFILE"; then exit; fi
     echo $$ > "$USER_HOME$PIDFILE"
     while true; do
@@ -114,7 +114,7 @@ if [ x"$1" = x-start ]; then
         $CMD_SET_END;
         $CMD_AS_USER sleep $SET_INTERVAL_SEC;
     done
-elif [ x"$1" = x-stop ]; then
+elif [ x"$1" = xstop ]; then
     # Cleanup hosts file and die.
     unblacklist_hosts_file;
     PID=$(cat $USER_HOME$PIDFILE);
