@@ -12,6 +12,8 @@
 # in a file named .pomodoro.urls.blacklist stored in the users home directory.
 ####################
 
+set -e
+
 SUDO_USER=${SUDO_USER}; # So we can run commands as non-root
 
 ### INVERVAL CONSTANTS ###
