@@ -61,8 +61,6 @@ else
             function linux_notify() {
                 python -c "import notify2;notify2.init('psh');m=notify2.Notification('pomodoro.sh', $1);m.show();";
             }
-        else
-            echo "Enable GUI notifications by installing python-notify2.";
 	    fi
     fi
 fi

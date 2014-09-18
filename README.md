@@ -14,7 +14,7 @@ On Linux you'll need to install this library, on Ubuntu try:
 
 ####  Install & Run
 <code>
-./install
+make
 </code>
 
 Start it up in the background....
